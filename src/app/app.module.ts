@@ -7,28 +7,20 @@ import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule, FormsModule} from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { ErrorComponent } from './error/error.component';
+import { ListTodosComponent } from './list-todos/list-todos.component';
 
-const routes:Routes=[
-  {path:'',component:LoginComponent},
-  {path:'login',component:LoginComponent},
-  {path:'welcome',component:WelcomeComponent},
-  {path:'**',component:ErrorComponent},
-]
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
     LoginComponent,
-    ErrorComponent
+    ErrorComponent,
+    ListTodosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    RouterModule.forRoot(routes)
-  ],
-  exports:[
-    RouterModule
+    FormsModule
   ]
   ,
   providers: [],
