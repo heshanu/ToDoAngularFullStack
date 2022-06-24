@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TodoDataService } from '../service/data/todo-data.service';
 import { Todo } from '../shared/class/Todo';
 //import { TodoInterface } from '../shared/interface/Todo.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-todos',
@@ -17,7 +18,7 @@ export class ListTodosComponent implements OnInit {
     new Todo(3,'learn to dance3',true,new Date()),
     new Todo(4,'learn to dance4',false,new Date())*/
   ];
-  constructor(private todoservice: TodoDataService) {}
+  constructor(private todoservice: TodoDataService,private router:Router) {}
 
   ngOnInit(): void {
     this.todoservice.retrirveAllTodos('in23min').subscribe((res) => {
@@ -42,7 +43,8 @@ export class ListTodosComponent implements OnInit {
   }
 
   updateTodo(id:any){
-    console.log(`delete id ${id}`);
-    
+    console.log(`updated  ${id}`);
+    this.router.navigate(['/todos',id]);
+
   }
 }

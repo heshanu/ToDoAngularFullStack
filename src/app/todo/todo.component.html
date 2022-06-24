@@ -1,1 +1,13 @@
-<p>todo works!</p>
+<h1>Todos</h1>
+<div class="container">
+  <fieldset class="form-group">
+    <label for="">Descrption</label>
+    <input type="text" name="description" [(ngModel)]="todo.description" class="form-control" name="description" required />
+  </fieldset>
+
+  <fieldset class="form-group">
+    <label for="">Target Date</label>
+    <input type="date" [(ngModel)]="todo.targetDate" name="targetDate" class="form-control" required />
+  </fieldset>
+<button class="btn btn-success" (click)="saveTodo()">Save</button>
+</div>
