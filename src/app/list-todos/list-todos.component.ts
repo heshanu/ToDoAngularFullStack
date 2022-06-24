@@ -40,4 +40,9 @@ export class ListTodosComponent implements OnInit {
       this.refreshTodos();
     });
   }
+
+  updateTodo(id:any){
+    console.log(`delete id ${id}`);
+    
+  }
 }

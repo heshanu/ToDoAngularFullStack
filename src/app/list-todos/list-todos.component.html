@@ -10,7 +10,8 @@
       <th>Description</th>
       <th>Target date</th>
       <th>Is completed</th>
-      <th>Action</th>
+      <th>Delete</th>
+      <th>Update</th>
     </tr>
     <tr *ngFor="let t of todos">
       <td>{{ t.id }}</td>
@@ -18,6 +19,7 @@
       <td>{{ t.targetDate | date }}</td>
       <td>{{ t.done }}</td>
       <td><button (click)="deleteTodo(t.id)" class="btn btn-danger">Delete</button></td>
+      <td><button (click)="updateTodo(t.id)" class="btn btn-warning">Update</button></td>
     </tr>
   </table>
 </div>
