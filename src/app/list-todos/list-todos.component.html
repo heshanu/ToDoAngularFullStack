@@ -11,6 +11,7 @@
       <th>Target date</th>
       <th>Is completed</th>
       <th>Delete</th>
+      <th>Delete from db</th>
       <th>Update</th>
     </tr>
     <tr *ngFor="let t of todos">
@@ -19,7 +20,11 @@
       <td>{{ t.targetDate | date }}</td>
       <td>{{ t.done }}</td>
       <td><button (click)="deleteTodo(t.id)" class="btn btn-danger">Delete</button></td>
-      <td><button (click)="updateTodo(t.id)" class="btn btn-warning">Update</button></td>
+      <td><button (click)="deleteTodos(t.id)" class="btn btn-danger">Delete</button></td>
+      <td><button (click)="updateTodo(t.id,t)" class="btn btn-warning">Update</button></td>
     </tr>
   </table>
+  <div class="row">
+    <button (click)="saveTodo()">Add</button>
+  </div>
 </div>
