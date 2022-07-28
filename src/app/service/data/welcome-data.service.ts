@@ -19,4 +19,10 @@ export class WelcomeDataService {
       `http://localhost:8080/helloworld/hello-world/path-variable/${welcomeName}`
     );
   }
+
+  createBasicAuthenticationHttpHeader(){
+      let username="user";let password="user";
+      let basicAuthHeaderString='Basic'+window.btoa(username+':'+password);
+      return basicAuthHeaderString;
+  }
 }
